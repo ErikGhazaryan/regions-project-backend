@@ -1,4 +1,4 @@
-package com.simpleapp.simpleapp;
+package com.regions.simpleapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
