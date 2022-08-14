@@ -29,6 +29,18 @@ public class NutsLevelRegionMigrationTableService {
         return this.nutsLevelRegionMigrationTableRepository.findByNutsLevel(nutsLevel);
     }
 
+    public void prepareNutsLevelRegionMigrationTable(List<String> listOfValues){
+
+        NutsLevelRegionMigrationTable nutsLevelRegionMigrationTable =
+                NutsLevelRegionMigrationTable.builder()
+                        .territoryCode(listOfValues.get(0))
+                        .nutsLevel(Integer.valueOf(listOfValues.get(1)))
+                        .countryOrder(Integer.valueOf(listOfValues.get(2)))
+                        .regionOrder(Integer.valueOf(listOfValues.get(3))).build();
+
+        nutsLevelRegionMigrationTableRepository.save(nutsLevelRegionMigrationTable);
+    }
+
     public void deleteAllNutsLevelRegionEntities() {
         log.info("deleting nutsLevel0Region entities");
         nutsLevel0RegionRepository.deleteAll();

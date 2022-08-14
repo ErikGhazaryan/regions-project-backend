@@ -94,4 +94,19 @@ public class PopulationDensityMigrationTableService {
         private void createYearPeriod(int calendarYear){
             yearPeriodRepository.save(YearPeriod.builder().calendarYear(calendarYear).build());
         }
+
+
+    public void preparePopulationDensityMigrationTable(List<String> listOfValues) {
+        PopulationDensityMigrationTable populationDensityMigrationTable =
+                PopulationDensityMigrationTable.builder()
+                        .territoryCode(listOfValues.get(0))
+                        .nutsLevelName(listOfValues.get(1))
+                        .year2015(listOfValues.get(2))
+                        .year2016(listOfValues.get(3))
+                        .year2017(listOfValues.get(4))
+                        .year2018(listOfValues.get(5))
+                        .year2019(listOfValues.get(6)).build();
+        populationDensityMigrationTableRepository.save(populationDensityMigrationTable);
+    }
 }
+

@@ -1,8 +1,6 @@
 package com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +8,9 @@ import java.math.BigDecimal;
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PopulationDensityMigrationTable {
 
     @Id

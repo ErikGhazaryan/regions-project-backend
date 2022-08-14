@@ -1,7 +1,6 @@
 package com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -9,7 +8,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name="nuts_level_region_migration_table")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class NutsLevelRegionMigrationTable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "migration_table_id")
