@@ -1,4 +1,4 @@
-package com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity;
+package com.regions.nutsLevel.migration.persistence.internal.entity;
 
 import lombok.*;
 

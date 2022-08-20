@@ -1,4 +1,4 @@
-package com.regions.nutsLevel.dao;
+package com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository;
 
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.NutsLevel3Region;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +10,5 @@ import java.util.Optional;
 @CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "nutslevel3region", path="nutslevel3region")
 public interface NutsLevel3RegionRepository extends JpaRepository<NutsLevel3Region, Long> {
-            Optional<NutsLevel3Region> findByTerritoryCode(String territoryCode);
+            NutsLevel3Region findByTerritoryCode(String territoryCode);
 }

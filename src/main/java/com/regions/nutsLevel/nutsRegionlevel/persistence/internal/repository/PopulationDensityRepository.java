@@ -1,4 +1,4 @@
-package com.regions.nutsLevel.dao;
+package com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository;
 
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.NutsLevel3Region;
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.PopulationDensity;

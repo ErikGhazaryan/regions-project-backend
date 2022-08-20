@@ -1,9 +1,9 @@
 package com.regions.nutsLevel.service;
 
-import com.regions.nutsLevel.dao.NutsLevel3RegionRepository;
-import com.regions.nutsLevel.dao.PopulationDensityMigrationTableRepository;
-import com.regions.nutsLevel.dao.PopulationDensityRepository;
-import com.regions.nutsLevel.dao.YearPeriodRepository;
+import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository.NutsLevel3RegionRepository;
+import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository.PopulationDensityMigrationTableRepository;
+import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository.PopulationDensityRepository;
+import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.repository.YearPeriodRepository;
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.NutsLevel3Region;
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.PopulationDensity;
 import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.PopulationDensityMigrationTable;
@@ -11,7 +11,6 @@ import com.regions.nutsLevel.nutsRegionlevel.persistence.internal.entity.YearPer
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Set;
@@ -54,7 +53,7 @@ public class PopulationDensityMigrationTableService {
             PopulationDensity populationDensity = PopulationDensity.builder()
                     .yearPeriod(yearPeriodRepository.findByCalendarYear(calendarYear).get())
                     .populationDensityPsk(getTheRightYear(populationDensityMigrationTable, calendarYear))
-                    .nutsLevel3Region(nutsLevel3RegionRepository.findByTerritoryCode(populationDensityMigrationTable.getTerritoryCode()).get()).build();
+                    .nutsLevel3Region(nutsLevel3RegionRepository.findByTerritoryCode(populationDensityMigrationTable.getTerritoryCode())).build();
 
             populationDensityRepository.save(populationDensity);
         } else {
